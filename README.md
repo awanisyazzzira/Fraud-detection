@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 </head>
 <body>
 
-<h1>Fraud Detection with Machine Learning</h1>
+<h1>The Detective's Notebook: Uncovering Credit Card Fraud</h1>
 
+![credit-card-fraud](path_to_image.png)
 
-<h2>Data Exploration and Fraud Detection</h2>
+<h2>Project Overview</h2>
 
-<p>This project is focused on detecting credit card fraud using machine learning techniques. The dataset, retrieved from <a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud">Kaggle</a>, contains 0.172% frauds.</p>
+<p>In the world of finance, where digital transactions flow like a river, there's a silent crime - credit card fraud. Welcome to the detective's journey into data, where we deploy machine learning to unveil this hidden threat.</p>
 
+<h2>The Case File</h2>
 
-<h2>Exploring the Data</h2>
+<p>Our investigation begins with a valuable dataset, sourced from <a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud">Kaggle</a>. Within its vast landscape of 284,807 transactions, we're hunting for elusive prey - the 0.172% that's hiding in plain sight - the frauds.</p>
 
-<p>We start by loading the credit card transaction dataset and performing exploratory data analysis (EDA). This includes calculating the correlation matrix and creating a heatmap to visualize the correlations between features.</p>
+<h2>The Clues in the Data</h2>
+
+<p>Before diving into the technical details, we perform exploratory data analysis (EDA) to understand the crime scene better. We employ Python's Pandas and Seaborn to build a correlation matrix, illuminating hidden connections between data points. Our heatmap visually guides us through this intricate web of relationships.</p>
 
 <pre><code># Calculate the correlation matrix
 correlation_matrix = data.corr()
@@ -28,18 +31,18 @@ plt.title('Correlation Heatmap')
 plt.show()
 </code></pre>
 
-<h2>Data Preprocessing</h2>
+<h2>Preparing for the Hunt</h2>
 
-<p>Next, we preprocess the data by handling class imbalance. We use the Synthetic Minority Over-sampling Technique (SMOTE) to oversample the minority class (frauds), creating a more balanced dataset for model training.</p>
+<p>Before we enter the battlefield, we need to prepare. Our primary challenge is data imbalance, a common trait of criminal investigations. Here, we employ SMOTE (Synthetic Minority Over-sampling Technique) to give life to the underrepresented minority class (frauds). This creates a balanced dataset, equipping us for the hunt.</p>
 
 <pre><code># Handling imbalance data by oversampling minority data (frauds)
 smote = SMOTE(random_state=42) 
 X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
 </code></pre>
 
-<h2>Model Building</h2>
+<h2>The Detective's Arsenal</h2>
 
-<p>We build a machine learning model, specifically a Random Forest Classifier, to detect fraudulent transactions. The model's hyperparameters are fine-tuned using GridSearchCV for optimal performance.</p>
+<p>The detective's toolkit includes a Random Forest Classifier, a trusted companion in many battles. To ensure it's at its best, we use GridSearchCV to find the perfect hyperparameters.</p>
 
 <pre><code># Hyperparameter tuning using GridSearchCV
 param_grid = {
@@ -51,9 +54,9 @@ grid_search.fit(X_train_resampled, y_train_resampled)
 best_model = grid_search.best_estimator_
 </code></pre>
 
-<h2>Model Evaluation</h2>
+<h2>Unmasking the Culprits</h2>
 
-<p>We evaluate the model's performance using various metrics, including the confusion matrix and the Area Under the Precision-Recall Curve (AUPRC). These metrics help us understand how well the model is identifying fraudulent transactions.</p>
+<p>With our toolkit ready, we enter the world of real-world data. The truth unravels through the eyes of a confusion matrix, revealing how our model predicts frauds. We evaluate its performance using metrics like precision, recall, and the subtle Area Under the Precision-Recall Curve (AUPRC).</p>
 
 <pre><code># Model testing
 y_pred = best_model.predict(X_test)
@@ -86,13 +89,7 @@ auprc = average_precision_score(y_test, y_pred)
 print(f'AUPRC: {auprc:.4f}')
 </code></pre>
 
-<h2>Contributing</h2>
+<h2>Join the Detective's Journey</h2>
 
-<p>If you'd like to contribute to this project, feel free to submit a pull request.</p>
+<p>If you're curious about our detective's journey and wish to join the expedition, we welcome your contributions. Feel free to submit a pull request and become a fellow detective in this data mystery.</p>
 
-<h2>License</h2>
-
-<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-
-</body>
-</html>
