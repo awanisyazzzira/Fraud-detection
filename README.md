@@ -8,7 +8,7 @@
 
 <h1>The Detective's Notebook: Uncovering Credit Card Fraud</h1>
 
-![credit-card-fraud](path_to_image.png)
+![credit-card-fraud](credit-card-fraud.jpg)
 
 <h2>Project Overview</h2>
 
